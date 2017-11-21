@@ -5,9 +5,7 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 
 	local vert = UI.CreateVerticalLayoutGroup(rootParent);
 
-	if (game.Us ~= nil) then --don't show propose button to spectators
-		UI.PromptFromList("Select the player you'd like to propose an alliance with", options);
-
+	if (game.Us ~= nil) then --don't show airdrop button to spectators
 		UI.CreateButton(vert).SetText("Create Airdrop").SetOnClick(function()
 			game.CreateDialog(CreateAirdropDialog);
 		end);
@@ -28,7 +26,6 @@ function CreateAirdropDialog(rootParent, setMaxSize, setScrollable, game, close)
 
 	local row1 = UI.CreateHorizontalLayoutGroup(vert);
 	AirdropButton = UI.CreateButton(row1).SetText("Select Territory...").SetOnClick(TargetTerritoryClicked);
-	UI.PromptFromList("Select the territory to Airdrop to", openTerritories);
 end
 
 function TargetTerritoryClicked()
