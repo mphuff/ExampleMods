@@ -45,7 +45,7 @@ end
 
 function SubmitClicked()
 	local msg = 'Airdropping ' .. Game.Game.TurnNumber .. ' armies';
-  print(msg)
+  print(msg);
 
 	--local payload = 'GiftArmies_' .. NumArmiesInput.GetValue() .. ',' .. TargetTerritoryID .. ',' .. TargetPlayerID;
 
