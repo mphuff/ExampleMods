@@ -4,7 +4,7 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 	Game = game; --make it globally accessible
 
 	if (game.Us ~= nil) then --don't show airdrop button to spectators
-    local vert = UI.CreateVerticalLayoutGroup(rootParent);
+    vert = UI.CreateVerticalLayoutGroup(rootParent);
     local turnNumber = game.Game.TurnNumber;
     local row1 = UI.CreateHorizontalLayoutGroup(vert);
     UI.CreateLabel(row1).SetText("Airdrop armies to this territory: ");
@@ -39,7 +39,7 @@ function CheckCreateFinalStep()
 		local row3 = UI.CreateHorizontalLayoutGroup(vert);
 		UI.CreateLabel(row3).SetText(Game.Game.TurnNumber .. " armies will be airdropped");
 
-		SubmitBtn = UI.CreateButton(vert).SetText("Gift").SetOnClick(SubmitClicked);
+		SubmitBtn = UI.CreateButton(vert).SetText("Airdrop").SetOnClick(SubmitClicked);
 	end
 end
 
