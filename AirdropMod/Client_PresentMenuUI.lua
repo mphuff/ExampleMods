@@ -7,8 +7,11 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 
 	if (game.Us ~= nil) then --don't show airdrop button to spectators
 		local allTerritories = game.LatestStanding.Territories;
+		Dump(allTerritories)
 		local turnNumber = game.Game.TurnNumber;
-		local openTerritories = filter(allTerritories, territoryIsNeutral);
+    Dump(turnNumber)
+		openTerritories = filter(allTerritories, territoryIsNeutral);
+    Dump(openTerritories)
 
 		local vert = UI.CreateVerticalLayoutGroup(rootParent);
 
