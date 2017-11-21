@@ -6,8 +6,15 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 	local vert = UI.CreateVerticalLayoutGroup(rootParent);
 
 	if (game.Us ~= nil) then --don't show airdrop button to spectators
-		--local allTerritories = game.LatestStanding.Territories;
-		--Dump(allTerritories);
+		standing = game.LatestStanding
+    if (standing ~= nil) then
+      print("Standing was NOT nil")
+      territories = standing.Territories;
+      Dump(territories);
+    else then
+      print("Standing was nil")
+    end
+    
 		local turnNumber = game.Game.TurnNumber;
     --Dump(turnNumber);
 		--openTerritories = filter(allTerritories, territoryIsNeutral);
