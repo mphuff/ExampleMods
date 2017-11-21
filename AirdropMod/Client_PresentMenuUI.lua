@@ -8,9 +8,7 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 	if (game.Us ~= nil) then --don't show airdrop button to spectators
 		local allTerritories = game.GameStanding.Territories;
 		local turnNumber = game.GameWL.TurnNumber;
-		local openTerritories = filter(allTerritories, function(territoryDetail) {
-			return territoryDetail.IsNeutral
-		});
+		local openTerritories = filter(allTerritories, territoryIsNeutral);
 
 		local vert = UI.CreateVerticalLayoutGroup(rootParent);
 
@@ -18,6 +16,10 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 		UI.CreateButton(row1).SetText("Select Territory...").SetOnClick(TargetTerritoryClicked);
 	end
 
+end
+
+function territoryIsNeutral()
+   return territoryDetail.IsNeutral;
 end
 
 function TargetTerritoryClicked()
