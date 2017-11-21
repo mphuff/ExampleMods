@@ -11,8 +11,8 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
       print("Standing was NOT nil")
       territories = standing.Territories;
       Dump(territories);
-    else then
-      print("Standing was nil")
+    else
+      print("Standing was nil");
     end
     
 		local turnNumber = game.Game.TurnNumber;
