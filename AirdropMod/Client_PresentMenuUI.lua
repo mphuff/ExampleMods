@@ -37,6 +37,7 @@ function CheckCreateFinalStep()
 	if (SubmitBtn == nil) then
 
 		local row3 = UI.CreateHorizontalLayoutGroup(vert);
+    NumArmies = Game.Game.TurnNumber
 		UI.CreateLabel(row3).SetText(Game.Game.TurnNumber .. " armies will be airdropped");
 
 		SubmitBtn = UI.CreateButton(vert).SetText("Airdrop").SetOnClick(SubmitClicked);
@@ -44,7 +45,7 @@ function CheckCreateFinalStep()
 end
 
 function SubmitClicked()
-	local msg = 'Airdropping ' .. Game.Game.TurnNumber .. ' armies';
+	local msg = 'Airdropping ' .. NumArmies .. ' armies';
   print(msg);
 
 	--local payload = 'GiftArmies_' .. NumArmiesInput.GetValue() .. ',' .. TargetTerritoryID .. ',' .. TargetPlayerID;
