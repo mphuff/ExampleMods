@@ -15,10 +15,8 @@ end
 
 function CreateAirdropDialog(rootParent, setMaxSize, setScrollable, game, close)
 	setMaxSize(390, 300);
-	TargetPlayerID = nil;
 
 	local vert = UI.CreateVerticalLayoutGroup(rootParent);
-
 	
 	local row1 = UI.CreateHorizontalLayoutGroup(vert);
 	UI.CreateLabel(row1).SetText("Select territory to airdrop to: ");
