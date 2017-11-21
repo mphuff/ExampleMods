@@ -1,0 +1,2 @@
+Allows players to drop a number of armies on a wasteland 1 time during a game even if they are not adjacent to the territory.
+
