@@ -13,15 +13,13 @@ function Client_PresentMenuUI(rootParent, setMaxSize, setScrollable, game, close
 		openTerritories = filter(allTerritories, territoryIsNeutral);
     Dump(openTerritories)
 
-		local vert = UI.CreateVerticalLayoutGroup(rootParent);
-
 		local row1 = UI.CreateHorizontalLayoutGroup(vert);
 		UI.CreateButton(row1).SetText("Select Territory...").SetOnClick(TargetTerritoryClicked);
 	end
 
 end
 
-function territoryIsNeutral()
+function territoryIsNeutral(territoryDetail)
    return territoryDetail.IsNeutral;
 end
 
